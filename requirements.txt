@@ -1,0 +1,17 @@
+# Core dependencies for fine-tuning and training
+unsloth @ git+https://github.com/unslothai/unsloth.git@2025.2.9  # Latest stable unsloth from GitHub
+datasets==2.19.1  # Compatible with evaluate==0.4.2, avoids DownloadConfig issues
+transformers==4.47.0  # Matches Kaggle's pre-installed version, works with torch==2.5.1
+trl==0.14.0  # Proven stable version for SFTTrainer
+accelerate==1.2.1  # Matches Kaggle's pre-installed version
+mlflow==2.13.0  # For experiment tracking
+scikit-learn  # Installed per your request, version flexible (latest is fine)
+
+# Evaluation dependencies
+evaluate==0.4.2  # For BLEU and other metrics (ROUGE skipped due to issues)
+rouge_score==0.1.2  # Direct ROUGE computation, bypasses evaluate
+bert-score==0.3.13  # For BERTScore metric
+numpy  # Required for metric computations, version flexible (latest is fine)
+
+# Pre-installed in Kaggle, included for completeness
+torch==2.5.1+cu121  # Kaggle's pre-installed version, compatible with unsloth
